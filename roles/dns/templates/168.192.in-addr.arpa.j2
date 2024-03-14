@@ -1,0 +1,19 @@
+$TTL 1D
+@   IN SOA  dns.{{ cluster-domain }}.  root.dns.{{ cluster-domain }}. (
+                                        2020012511      ; serial
+                                        1D              ; refresh
+                                        1H              ; retry
+                                        1W              ; expire
+                                        3H )            ; minimum
+@       IN      NS      dns.{{ cluster-domain }}.
+ocp.    IN      NS      dns.{{ cluster-domain }}.
+2      IN    PTR    dns.{{ cluster-domain }}.
+10     IN    PTR    ns1.{{ cluster-domain }}.
+111     IN    PTR    api.{{ cluster-domain }}.
+111     IN    PTR    api-int.{{ cluster-domain }}.
+100     IN    PTR    master-0.{{ cluster-domain }}.
+101     IN    PTR    master-1.{{ cluster-domain }}.
+102     IN    PTR    master-2.{{ cluster-domain }}.
+200     IN    PTR    worker-0.{{ cluster-domain }}.
+201     IN    PTR    worker-1.{{ cluster-domain }}.
+202     IN    PTR    worker-2.{{ cluster-domain }}.

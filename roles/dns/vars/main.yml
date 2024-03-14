@@ -1,2 +1,5 @@
 ---
 # vars file for dns
+# this cluster-domain variable is a combination of the cluster name and cluster base domain
+cluster-domain: ''
+ip_addr_segment_3: 

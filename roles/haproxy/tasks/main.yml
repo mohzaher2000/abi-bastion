@@ -1,2 +1,51 @@
 ---
 # tasks file for haproxy
+
+- name: Open firewallD services
+  ansible.posix.firewalld:
+    service: "{{ service }}"
+    permanent: yes
+    immediate: yes
+    state: enabled
+
+- name: Install required software packages
+  ansible.builtin.yum:
+    name: "{{ package }}"
+    state: present
+
+- name: Open firewallD ports
+  ansible.posix.firewalld:
+    port: "{{ item }}"
+    permanent: yes
+    immediate: yes
+    state: enabled
+  loop:
+  - 81/tcp
+  - 22623/tcp
+  - 6443/tcp
+  - 5000/tcp
+
+- name: Configure haproxy.cfg
+  ansible.builtin.template:
+    src: haproxy.j2
+    dest: /etc/haproxy/haproxy.cfg
+
+- name: Allow HAproxy to listen on tcp port 22623
+  ansible.builtin.seport:
+    ports: 22623
+    proto: tcp
+    setype: http_port_t
+    state: present
+
+- name: Allow HAproxy to listen on tcp port 6443
+  ansible.builtin.seport:
+    ports: 6443
+    proto: tcp
+    setype: http_port_t
+    state: present
+
+- name: Enable haproxy
+  ansible.builtin.service:
+    name: haproxy
+    state: started
+    enabled: true
