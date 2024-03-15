@@ -3,7 +3,7 @@
 
 service: dns
 package:
-  - bin
+  - bind
   - bind-utils
 # this cluster-domain variable is a combination of the cluster name and cluster base domain
 cluster-domain: 'cluster-domain.com'

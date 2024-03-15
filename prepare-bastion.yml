@@ -1,0 +1,15 @@
+- name: Configure bastion for OCP4 UPI
+  hosts: localhost
+  become: true
+  
+  roles:
+  - role: dns
+    vars:
+      cluster-domain: 'l7t84.dynamic.opentlc.com'
+      ip_addr_segment_3: 56
+
+  - role: haproxy
+    vars:
+      ip_addr_segment_3: 56
+    
+
