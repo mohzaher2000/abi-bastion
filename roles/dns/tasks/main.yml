@@ -1,16 +1,17 @@
 ---
 # tasks file for dns
+
+- name: Install required software packages
+  ansible.builtin.yum:
+    name: "{{ package }}"
+    state: present
+
 - name: Open firewallD services
   ansible.posix.firewalld:
     service: "{{ service }}"
     permanent: yes
     immediate: yes
     state: enabled
-
-- name: Install required software packages
-  ansible.builtin.yum:
-    name: "{{ package }}"
-    state: present
 
 - name: Configure reverse domain DNS file
   ansible.builtin.template:
