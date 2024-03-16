@@ -7,7 +7,7 @@
     state: present
   loop:
   - bind
-  - bind-util
+  - bind-utils
 
 - name: Open firewallD services
   ansible.posix.firewalld:
