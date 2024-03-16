@@ -23,7 +23,6 @@
     immediate: yes
     state: enabled
   loop:
-  - 81/tcp
   - 22623/tcp
   - 6443/tcp
   - 5000/tcp
