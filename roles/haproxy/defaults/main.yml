@@ -1,8 +1,4 @@
 ---
 # defaults file for haproxy
 
-service:
-  - http
-  - https
-package: haproxy
 ip_addr_segment_3: 0

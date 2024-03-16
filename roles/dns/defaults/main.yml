@@ -1,10 +1,5 @@
 ---
-# defaults file for dns
 
-service: dns
-package:
-  - bind
-  - bind-utils
 # this cluster-domain variable is a combination of the cluster name and cluster base domain
 clusterdomain: 'cluster-domain.com'
 ip_addr_segment_3: 0

@@ -3,15 +3,18 @@
 
 - name: Install required software packages
   ansible.builtin.yum:
-    name: "{{ package }}"
+    name: haproxy
     state: present
 
 - name: Open firewallD services
   ansible.posix.firewalld:
-    service: "{{ service }}"
+    service: "{{ item }}"
     permanent: yes
     immediate: yes
     state: enabled
+  loop:
+    - http
+    - https
 
 - name: Open firewallD ports
   ansible.posix.firewalld:
