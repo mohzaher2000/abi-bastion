@@ -1,0 +1,21 @@
+$TTL 1D
+@   IN SOA  dns.{{ clusterdomain }}   root.{{ clusterdomain }}. (
+                                       2017031330      ; serial
+                                       1D              ; refresh
+                                       1H              ; retry
+                                       1W              ; expire
+                                       3H )            ; minimum
+$ORIGIN         {{ clusterdomain }}.
+{{ clusterdomain }}.            IN      NS      dns.{{ clusterdomain }}.
+dns                     IN      A       192.168.{{ ip_addr_segment_3 }}.10
+*.apps      IN    A    192.168.{{ ip_addr_segment_3 }}.10
+ns1      IN    A    192.168.{{ ip_addr_segment_3 }}.111
+bastion      IN    A    192.168.{{ ip_addr_segment_3 }}.10
+api      IN    A    192.168.{{ ip_addr_segment_3 }}.10
+api-int      IN    A    192.168.{{ ip_addr_segment_3 }}.10
+master-0     IN    A    192.168.{{ ip_addr_segment_3 }}.100
+master-1     IN    A    192.168.{{ ip_addr_segment_3 }}.101
+master-2     IN    A    192.168.{{ ip_addr_segment_3 }}.102
+worker-0     IN    A    192.168.{{ ip_addr_segment_3 }}.200
+worker-1     IN    A    192.168.{{ ip_addr_segment_3 }}.201
+worker-2     IN    A    192.168.{{ ip_addr_segment_3 }}.202

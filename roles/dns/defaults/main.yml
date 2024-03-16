@@ -6,6 +6,6 @@ package:
   - bind
   - bind-utils
 # this cluster-domain variable is a combination of the cluster name and cluster base domain
-cluster-domain: 'cluster-domain.com'
+clusterdomain: 'cluster-domain.com'
 ip_addr_segment_3: 0
 

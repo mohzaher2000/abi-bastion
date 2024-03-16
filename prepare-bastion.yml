@@ -5,7 +5,7 @@
   roles:
   - role: dns
     vars:
-      cluster-domain: 'l7t84.dynamic.opentlc.com'
+      clusterdomain: 'l7t84.dynamic.opentlc.com'
       ip_addr_segment_3: 56
 
   - role: haproxy
