@@ -4,12 +4,12 @@ compute:
 - architecture: amd64
   hyperthreading: Enabled
   name: worker
-  replicas: 3
+  replicas: 2 
 controlPlane:
   architecture: amd64
   hyperthreading: Enabled
   name: master
-  replicas: 2
+  replicas: 3
 metadata:
   name: l7t84
 networking:
